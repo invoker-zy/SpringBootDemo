@@ -1,0 +1,12 @@
+Person:
+  name: zhangsan
+  age: 18
+  boss: false
+  birth: 2020/11/20
+  maps: {k1: v1,k2: 12}
+  lists:
+    - lisi
+    - zhaowu
+  dog:
+    name: 小狗
+    age: 2
