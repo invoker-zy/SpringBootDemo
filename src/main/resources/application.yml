@@ -1,6 +1,6 @@
 Person:
-  name: zhangsan
-  age: 18
+  name: 张三${random.uuid}
+  age: ${random.int}
   boss: false
   birth: 2020/11/20
   maps: {k1: v1,k2: 12}
@@ -8,5 +8,5 @@ Person:
     - lisi
     - zhaowu
   dog:
-    name: 小狗
+    name: ${person.name}_dog
     age: 2

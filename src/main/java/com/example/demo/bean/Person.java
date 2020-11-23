@@ -1,6 +1,8 @@
 package com.example.demo.bean;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -10,13 +12,21 @@ import java.util.Map;
 /**
  * 将配置文件中配置的每一个属性的值，映射到这个组件中
  * @ConfigurationProperties 告诉 Spring Boot 将本类中的所有属性和配置文件中相关的配置进行绑定
- * @Component 只有这个组件时容器中的组件，才能使用容器提供的功能
+ *                           默认从全局配置文件中获取值。
+ * @Component 将本来标识为一个 Spring 组件，因为只有是容器中的组件，容器才会为 @ConfigurationProperties 提供此注入功能
  */
+//@PropertySource(value = {"classpath:person.properties"})
 @Component
 @ConfigurationProperties(prefix = "person")
 public class Person {
+    /**
+     *
+     */
+//    @Value("${person.name}")
     private String name;
+//    @Value("#{11*2}")
     private Integer age;
+//    @Value("true")
     private Boolean boss;
     private Date birth;
 
